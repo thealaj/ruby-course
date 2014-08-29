@@ -3,6 +3,8 @@ require "pry-byebug"
 require "rubygems"
 require_relative "../exercises.rb"
 
+describe Exercises do
+
 describe ".ex0" do 
   it "triples length of a string" do
   result = Exercises.ex0("ha")
@@ -23,4 +25,13 @@ describe ".ex1" do
 
     expect(result).to eq(4)
   end
+end
+
+describe ".ex2" do
+  it "returns second element in array" do
+    result = Exercises.ex2([1, "alex", 77, "danny"])
+
+    expect(result).to eq("alex")
+  end
+end
 end
