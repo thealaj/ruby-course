@@ -34,4 +34,22 @@ describe ".ex2" do
     expect(result).to eq("alex")
   end
 end
+
+describe ".ex3" do
+  it "sums the elements in an array" do
+    result = Exercises.ex3([1, 3, 5, 7, 9])
+
+    expect(result).to eq(25)
+  end
+
+  # it "returns false if given an array with strings" do
+  #   result = Exercises.ex3([1, "alex", 77, "danny"])
+
+  #   expect(result).to eq(false)
+  # end
 end
+
+
+end
+
+
