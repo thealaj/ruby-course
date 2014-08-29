@@ -57,14 +57,43 @@ describe ".ex4" do
   end
 end
 
-# describe ".ex5" do
-#    it "iterates through and puts each element in an array" do
-#     result = Exercises.ex5([1, 3, 5, 7, 9])
+Rspec.describe ".ex5" do
+   xit "iterates through and puts each element in an array" do
+    result = Exercises.ex5(["party"])
+ specify { expect { print('party') }.to output.to_stdout }
+  end
+end
 
-#     expect(result).to eq(9)
-#   end
-# end
+describe ".ex6" do
+  it "updates the last item in an array to panda" do
+  result = Exercises.ex6(["lions", "tigers", "bears"])
+
+  expect(result[-1]).to eq("panda")
+  end
+
+  it "updates the last item to GODZILLA if panda is already last in the array" do
+  result1 = Exercises.ex6(["lions", "panda", "tigers", "bears"])
+  result2 = Exercises.ex6(["lions", "tigers", "bears", "panda"])
+
+    expect(result1[-1]).to eq("panda")
+    expect(result2[-1]).to eq("GODZILLA")
+
+  end
 
 end
+
+
+end
+
+
+
+
+
+
+
+
+
+
+
 
 
