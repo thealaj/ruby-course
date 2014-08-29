@@ -49,6 +49,21 @@ describe ".ex3" do
   # end
 end
 
+describe ".ex4" do
+   it "returns the max number in a given array" do
+    result = Exercises.ex4([1, 3, 5, 7, 9])
+
+    expect(result).to eq(9)
+  end
+end
+
+# describe ".ex5" do
+#    it "iterates through and puts each element in an array" do
+#     result = Exercises.ex5([1, 3, 5, 7, 9])
+
+#     expect(result).to eq(9)
+#   end
+# end
 
 end
 
