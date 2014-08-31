@@ -57,13 +57,15 @@ describe ".ex4" do
   end
 end
 
-Rspec.describe ".ex5" do
-   xit "iterates through and puts each element in an array" do
-    result = Exercises.ex5(["party"])
-    STDOUT.should_receive(:puts).with(1)
-    STDOUT.should_receive(:puts).with(2)
-    STDOUT.should_receive(:puts).with(3)
-    Exercises.ex5(array)
+RSpec.describe ".ex5" do #Saw solution in class
+   it "iterates through and puts each element in an array" do
+    arr = %w(party party party)
+    result = Exercises.ex5(arr)
+    STDOUT.should_receive(:puts).with("party")
+    STDOUT.should_receive(:puts).with("party")
+    STDOUT.should_receive(:puts).with("party")
+    Exercises.ex5(arr)
+  end
   end
 end
 
@@ -92,7 +94,7 @@ describe ".ex7" do
   end
 end
 
-RSpec.describe ".ex8" do
+RSpec.describe ".ex8" do #Saw solution in class
   it "iterates through an array of hashes to print name an occupation " do
   hasharr = [{:name => "Jane", :occupation => "Garbage Lady"}]
   result = Exercises.ex8(hasharr)
@@ -101,7 +103,7 @@ RSpec.describe ".ex8" do
   end
 end
 
-describe ".ex9" do
+describe ".ex9" do #Saw solution in class
   it "should return true if the year is a leap year" do
     a = 2000
     b = 1900
@@ -116,8 +118,18 @@ describe ".ex9" do
   end
 end
 
+describe ".ex10" do #Saw solution in class
+  it "should return happy hour from 4-6 p.m." do
+    eleven = Time.parse("11 am")
+    fivethirty = Time.parse("5:30 pm")
 
+    Time.stub(:now).and_return(fivethirty)
+    expect(Exercises.ex10).to eq("happy hour")
 
+    Time.stub(:now).and_return(eleven)
+    expect(Exercises.ex10).to eq("normal")
+
+  end
 end
 
 

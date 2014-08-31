@@ -90,7 +90,8 @@ module Exercises
   def self.ex10
     hr = Time.now.hour
     return "happy hour" if hr == 16 || hr == 17
-    "normal"
+    else 
+      return "normal"
   end
 end
 
