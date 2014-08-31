@@ -7,7 +7,7 @@ module Exercises
     if str == "wishes"
       return "nope"
     else
-    return str + str + str
+    return str * 3
   end
   end
 
@@ -57,7 +57,9 @@ module Exercises
   #  - If the string `str` exists in the array,
   #    add `str` to the end of the array
   def self.ex7(array, str)
-    # TODO
+    if array.include?(str)
+      array[-1] = str
+    end
   end
 
   # Exercise 8
@@ -65,7 +67,9 @@ module Exercises
   #    { :name => 'Bob', :occupation => 'Builder' }
   #    Iterate through `people` and print out their name and occupation.
   def self.ex8(people)
-    # TODO
+    people.each do |x|
+     print x[:name] + " is a " + x[:occupation]
+    end
   end
 
   # Exercise 9
@@ -73,15 +77,20 @@ module Exercises
   #    Otherwise, returns `false`
   # Hint: Google for the wikipedia article on leap years
   def self.ex9(time)
-    # TODO
-  end
+     if (time % 400 == 0) || ((time % 100 != 0) && (time % 4 == 0))
+      return true
+    end
+    return false
+ end
 
   # Exercise 10
   #  - Returns "happy hour" if it is between 4 and 6pm
   #    Otherwise, returns "normal prices"
   # Hint: Read the "Stubbing" documentation on the Learn app.
   def self.ex10
-    # TODO
+    hr = Time.now.hour
+    return "happy hour" if hr == 16 || hr == 17
+    "normal"
   end
 end
 

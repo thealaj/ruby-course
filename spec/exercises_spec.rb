@@ -60,7 +60,10 @@ end
 Rspec.describe ".ex5" do
    xit "iterates through and puts each element in an array" do
     result = Exercises.ex5(["party"])
- specify { expect { print('party') }.to output.to_stdout }
+    STDOUT.should_receive(:puts).with(1)
+    STDOUT.should_receive(:puts).with(2)
+    STDOUT.should_receive(:puts).with(3)
+    Exercises.ex5(array)
   end
 end
 
@@ -77,10 +80,42 @@ describe ".ex6" do
 
     expect(result1[-1]).to eq("panda")
     expect(result2[-1]).to eq("GODZILLA")
-
   end
-
 end
+
+describe ".ex7" do
+  it "checks if a string exists in an array" do
+  array = ["Garbage Lady", 8, 6, 7]
+  result = Exercises.ex7(array, "Garbage Lady")
+
+  expect(array[-1]).to eq("Garbage Lady") 
+  end
+end
+
+RSpec.describe ".ex8" do
+  it "iterates through an array of hashes to print name an occupation " do
+  hasharr = [{:name => "Jane", :occupation => "Garbage Lady"}]
+  result = Exercises.ex8(hasharr)
+  Exercises.should_receive(:print).with("Jane is a Garbage Lady")
+  Exercises.ex8(result)
+  end
+end
+
+describe ".ex9" do
+  it "should return true if the year is a leap year" do
+    a = 2000
+    b = 1900
+    c = 2016
+    result1 = Exercises.ex9(a)
+    result2 = Exercises.ex9(b)
+    result3 = Exercises.ex9(c)
+
+    expect(result1).to be_true 
+    expect(result2).to be_false
+    expect(result3).to be_true
+  end
+end
+
 
 
 end
